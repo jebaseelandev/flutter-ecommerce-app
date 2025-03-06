@@ -1,4 +1,4 @@
-# 🚀 Flutter E-Commerce App 
+🚀 Flutter E-Commerce App 
 ## 📖 Overview
 A fully functional Flutter e-commerce app with features like user authentication, product listing, cart management,
 onboarding screens, and splash screens. The app uses modern Flutter technologies like Dio for networking, 
@@ -16,14 +16,20 @@ Retrofit is for API abstraction, Cubit & Bloc is for state management, and Git i
 ## 📷 **Screenshots**
  onboarding frist  |onBoarding Next  | Onboarding final |
 |-------------|--------------|---------------|
-| ![onboarding1](https://github.com/user-attachments/assets/3ff4e879-058f-47e5-9db2-faab6559c168) | ![onboarding2](https://github.com/user-attachments/assets/76d9ca6f-8b1a-4a40-ae67-027e797d0301) | ![onboarding3](https://github.com/user-attachments/assets/e4a8612e-f75e-40c2-ac23-bf73872b7a57) |
+|    ![fs1](https://github.com/user-attachments/assets/32c0dd0d-f012-49b1-ae60-37d65bcda880) | ![fs2](https://github.com/user-attachments/assets/2167d756-27aa-4db8-9485-cc9cca3bb7ef) | ![fs3](https://github.com/user-attachments/assets/442bd94f-bbce-4b41-912e-fad130d546b6) |
+
 
 ---
  Login   | Registration  |
 |-------------|--------------|
-| ![fa1](https://github.com/user-attachments/assets/a2238dac-5105-4d78-a529-923518ed55b1)  | ![fa2](https://github.com/user-attachments/assets/272bd203-3e40-4c18-8a2e-72533ecaa616) |
+|  ![fs4](https://github.com/user-attachments/assets/1aa18c81-b344-47b8-b8d1-d56b96abd9b0)  | ![fs5](https://github.com/user-attachments/assets/feed5f02-b315-4907-9e60-71090d169d2d) |
 
---
+---
+ product | detalise   | Cart🛒  |
+ |---------------|-------------|--------------|
+ | ![Screenshot_20250306_044654](https://github.com/user-attachments/assets/1ff8a345-49df-4e69-9940-14c5c0cb0b45) |   ![Screenshot_20250306_044722](https://github.com/user-attachments/assets/8bbf890b-0792-49e1-a02c-7ce121da40f1)  |     ![Screenshot_20250306_044746](https://github.com/user-attachments/assets/310a2f37-67de-4143-8eb9-81d91cd12971) |
+
+---
 
 ## 🧑‍💻Technologies Used
 
