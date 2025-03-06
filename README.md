@@ -29,6 +29,53 @@ Retrofit is for API abstraction, Cubit & Bloc is for state management, and Git i
 
 ---
 
+## 🏗️  App Structure
+           
+      lib/
+      │
+      ├── core/                  # Core Layer (Framework-independent utilities)
+      │   ├── constants/         # App-wide constants (e.g., colors, strings, API keys)
+      │   ├── errors/            # Custom error handling and exceptions
+      │   ├── network/           # Network-related utilities (e.g., Dio client, interceptors)
+      │   ├── utils/             # Helper functions, extensions, and utilities
+      │   ├── widgets/           # Reusable widgets used across the app
+      │   └── di/                # Dependency Injection (DI) setup
+      │       └── injector.dart  # Dependency injection configuration
+      │
+      ├── data/                  # Data Layer (Data sources and repositories)
+      │   ├── datasources/       # Data sources (local and remote)
+      │   │   ├── local/         # Local data sources (e.g., SQLite, SharedPreferences)
+      │   │   └── remote/        # Remote data sources (e.g., API calls)
+      │   ├── models/            # Data models (e.g., API response models)
+      │   ├── repositories/      # Repository implementations
+      │   └── data_providers/    # Data providers (optional, for complex data flows)
+      │
+      ├── domain/                # Domain Layer (Business logic and use cases)
+      │   ├── entities/          # Business entities (e.g., User, Product)
+      │   ├── repositories/      # Repository interfaces (abstract classes)
+      │   ├── use_cases/         # Use cases (business logic)
+      │   └── exceptions/        # Domain-specific exceptions
+      │
+      ├── presentation/          # Presentation Layer (UI and state management)
+      │   ├── auth/              # Authentication module
+      │   │   ├── bloc/          # BLoC for auth (events, states, bloc)
+      │   │   ├── pages/         # Auth-related screens (e.g., login, signup)
+      │   │   └── widgets/       # Auth-related UI components
+      │   ├── product/           # Product module
+      │   │   ├── bloc/          # BLoC for product (events, states, bloc)
+      │   │   ├── pages/         # Product-related screens (e.g., product list, details)
+      │   │   └── widgets/       # Product-related UI components
+      │   ├── cart/              # Cart module
+      │   │   ├── bloc/          # BLoC for cart (events, states, bloc)
+      │   │   ├── pages/         # Cart-related screens (e.g., cart page, checkout)
+      │   │   └── widgets/       # Cart-related UI components
+      │   ├── theme/             # App theme (colors, text styles, etc.)
+      │   └── app.dart           # Main app widget (e.g., MaterialApp setup)
+      │
+      └── main.dart              # App entry point
+              
+   
+    
 ## 🧑‍💻Technologies Used
 
 
