@@ -14,9 +14,13 @@ Retrofit is for API abstraction, Cubit & Bloc is for state management, and Git i
 ✅ Responsive UI with Jetpack Compose-style widgets  
 
 ## 📷 **Screenshots**
- onboarding frist  |onBoarding Next  | Onboarding final |  Login | Registration |
-|-------------|--------------|---------------|-----------|----------|
-|  <img src= "https://github.com/user-attachments/assets/32c0dd0d-f012-49b1-ae60-37d65bcda880" width="200" height="400" alt="Image 1"> | <img src= "https://github.com/user-attachments/assets/2167d756-27aa-4db8-9485-cc9cca3bb7ef" width="200" height="400" alt="Image 2"> | <img src="https://github.com/user-attachments/assets/442bd94f-bbce-4b41-912e-fad130d546b6" width="200" height="400" alt="Image 3"> |   <img src= "https://github.com/user-attachments/assets/1aa18c81-b344-47b8-b8d1-d56b96abd9b0" width="200" height="400" alt="Image 1"> | <img src= "https://github.com/user-attachments/assets/546b3fec-6b49-4a16-80d7-19dfe1bd0fd4" width="200" height="400" alt="Image 1"> |
+ onboarding frist  |onBoarding Next  | Onboarding final |  
+|-------------|--------------|---------------|
+|  <img src= "https://github.com/user-attachments/assets/32c0dd0d-f012-49b1-ae60-37d65bcda880" width="200" height="400" alt="Image 1"> | <img src= "https://github.com/user-attachments/assets/2167d756-27aa-4db8-9485-cc9cca3bb7ef" width="200" height="400" alt="Image 2"> | <img src="https://github.com/user-attachments/assets/442bd94f-bbce-4b41-912e-fad130d546b6" width="200" height="400" alt="Image 3">  |
+---
+  Login | Registration |
+  |-----------|----------|
+<img src= "https://github.com/user-attachments/assets/1aa18c81-b344-47b8-b8d1-d56b96abd9b0" width="200" height="400" alt="Image 1"> | <img src= "https://github.com/user-attachments/assets/546b3fec-6b49-4a16-80d7-19dfe1bd0fd4" width="200" height="400" alt="Image 1"> |
 ---
 
  product | detalise   | Cart🛒  |
