@@ -10,6 +10,8 @@ class LoginScreen extends StatelessWidget {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  LoginScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,9 +26,9 @@ class LoginScreen extends StatelessWidget {
         child: BlocListener<LoginCubit, LoginState>(
           listener: (context, state) {
             if (state is LoginFailure) {
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(content: Text(state.message)),
-              );
+              ScaffoldMessenger.of(
+                context,
+              ).showSnackBar(SnackBar(content: Text(state.message)));
             } else if (state is LoginSuccess) {
               Navigator.pushReplacementNamed(context, AppRouter.homeRout);
             }
@@ -95,17 +97,14 @@ class LoginScreen extends StatelessWidget {
 
   /// Builds the app logo with a Hero animation.
   Widget _buildAppLogo() {
-    return const Hero(
-      tag: 'logo',
-      child: FlutterLogo(size: 100),
-    );
+    return const Hero(tag: 'logo', child: FlutterLogo(size: 100));
   }
 
   /// Builds the welcome text section.
   Widget _buildWelcomeText() {
-    return const  Column(
+    return const Column(
       children: [
-         Text(
+        Text(
           'Welcome Back!',
           style: TextStyle(
             fontSize: 24,
@@ -113,15 +112,12 @@ class LoginScreen extends StatelessWidget {
             color: Colors.black87,
           ),
         ),
-         SizedBox(height: 10),
-         Text(
+        SizedBox(height: 10),
+        Text(
           'Login to continue',
-          style: TextStyle(
-            fontSize: 16,
-            color: Colors.black54,
-          ),
+          style: TextStyle(fontSize: 16, color: Colors.black54),
         ),
-         SizedBox(height: 30),
+        SizedBox(height: 30),
       ],
     );
   }
@@ -151,9 +147,12 @@ class LoginScreen extends StatelessWidget {
         }
         return ElevatedButton(
           onPressed: () {
-            if (_usernameController.text.isEmpty || _passwordController.text.isEmpty) {
+            if (_usernameController.text.isEmpty ||
+                _passwordController.text.isEmpty) {
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Please enter username and password')),
+                const SnackBar(
+                  content: Text('Please enter username and password'),
+                ),
               );
             } else {
               context.read<LoginCubit>().login(
@@ -182,10 +181,7 @@ class LoginScreen extends StatelessWidget {
   Widget _buildOrLoginWithText() {
     return const Text(
       'Or login with',
-      style: TextStyle(
-        fontSize: 14,
-        color: Colors.black54,
-      ),
+      style: TextStyle(fontSize: 14, color: Colors.black54),
     );
   }
 
@@ -221,10 +217,7 @@ class LoginScreen extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacementNamed(context, AppRouter.registerRout);
           },
-          child: const Text(
-            'Sign Up',
-            style: TextStyle(color: Colors.blue),
-          ),
+          child: const Text('Sign Up', style: TextStyle(color: Colors.blue)),
         ),
       ],
     );

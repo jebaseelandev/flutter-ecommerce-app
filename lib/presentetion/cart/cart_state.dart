@@ -1,4 +1,3 @@
-import 'package:weather_app/data/modal/cart/cart.dart';
 import 'package:weather_app/presentetion/cart/cart_entity.dart';
 
 abstract class CartState {}

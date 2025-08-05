@@ -11,11 +11,13 @@ import 'registration_cubit.dart';
 import 'registration_state.dart';
 
 class RegistrationScreen extends StatefulWidget {
+  const RegistrationScreen({super.key});
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
-class _RegistrationScreenState extends State<RegistrationScreen> {
 
+class _RegistrationScreenState extends State<RegistrationScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _usernameController = TextEditingController();
@@ -37,7 +39,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
       body: Stack(
         children: [
-
           // Wave Header custom view
           _buildWaveHeader(),
 
@@ -50,12 +51,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const SizedBox(height: 100), // Space for the wave
-
                   // App Logo with Hero Animation
-                  const Hero(
-                    tag: 'logo',
-                    child: FlutterLogo(size: 100),
-                  ),
+                  const Hero(tag: 'logo', child: FlutterLogo(size: 100)),
                   const SizedBox(height: 20),
 
                   // Registration  title & subtitle
@@ -64,15 +61,28 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   const SizedBox(height: 30),
 
                   // Email Field
-                  CustomTextField(controller: _emailController,label:  'Email', icon:Icons.email),
+                  CustomTextField(
+                    controller: _emailController,
+                    label: 'Email',
+                    icon: Icons.email,
+                  ),
                   const SizedBox(height: 16),
 
                   // Username Field
-                  CustomTextField(controller: _usernameController, label: 'Username', icon:Icons.person),
+                  CustomTextField(
+                    controller: _usernameController,
+                    label: 'Username',
+                    icon: Icons.person,
+                  ),
                   const SizedBox(height: 16),
 
                   // Password Field
-                  CustomTextField(controller: _passwordController, label: 'Password', icon:Icons.lock, isPassword: true),
+                  CustomTextField(
+                    controller: _passwordController,
+                    label: 'Password',
+                    icon: Icons.lock,
+                    isPassword: true,
+                  ),
                   const SizedBox(height: 16),
 
                   // Toggle Additional Fields
@@ -83,7 +93,9 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       });
                     },
                     child: Text(
-                      _showAdditionalFields ? 'Hide Additional data' : 'Complete your data ',
+                      _showAdditionalFields
+                          ? 'Hide Additional data'
+                          : 'Complete your data ',
                       style: const TextStyle(color: Colors.white),
                     ),
                   ),
@@ -92,15 +104,13 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   // Additional Fields (Expanded Section)
                   if (_showAdditionalFields) _buildAdditionalFields(),
 
-
                   // Register Button
                   _buildRegisterButton(),
 
                   const SizedBox(height: 20),
 
                   // Already Have an Account Link
-                  _buildLoginLink()
-
+                  _buildLoginLink(),
                 ],
               ),
             ),
@@ -115,25 +125,22 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   /// widget  the registration title and subtitle.
   Widget _buildRegistrationTitle() {
     return const Column(
-        children: [
-          Text(
-            'Create an Account',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
-            ),
+      children: [
+        Text(
+          'Create an Account',
+          style: TextStyle(
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+            color: Colors.white,
           ),
-          SizedBox(height: 10),
-          Text(
-            'Join us to start shopping',
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white70,
-            ),
-          ),
-          SizedBox(height: 30),
-        ],
+        ),
+        SizedBox(height: 10),
+        Text(
+          'Join us to start shopping',
+          style: TextStyle(fontSize: 16, color: Colors.white70),
+        ),
+        SizedBox(height: 30),
+      ],
     );
   }
 
@@ -143,12 +150,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       top: 0,
       left: 0,
       right: 0,
-      child: SizedBox(
-        height: 400,
-        child: CustomPaint(
-          painter: WavePainter(),
-        ),
-      ),
+      child: SizedBox(height: 400, child: CustomPaint(painter: WavePainter())),
     );
   }
 
@@ -156,24 +158,52 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   Widget _buildAdditionalFields() {
     return Column(
       children: [
-          CustomTextField(controller:  _firstNameController, label: 'First Name', icon:Icons.person_outline),
-          const SizedBox(height: 16),
-          CustomTextField(controller: _lastNameController,label:  'Last Name', icon:Icons.person_outline),
-          const SizedBox(height: 16),
-          CustomTextField(controller: _cityController, label: 'City',icon: Icons.location_city),
-          const SizedBox(height: 16),
-          CustomTextField(controller: _streetController, label: 'Street',icon:  Icons.add_road),
-          const SizedBox(height: 16),
-          CustomTextField(controller: _numberController, label: 'Number', icon:Icons.format_list_numbered),
-          const SizedBox(height: 16),
-          CustomTextField(controller: _zipcodeController,label:  'Zipcode',icon: Icons.map),
-          const SizedBox(height: 16),
-          CustomTextField (controller: _phoneController, label: 'Phone',icon:  Icons.phone),
-          const SizedBox(height: 20),
-
+        CustomTextField(
+          controller: _firstNameController,
+          label: 'First Name',
+          icon: Icons.person_outline,
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          controller: _lastNameController,
+          label: 'Last Name',
+          icon: Icons.person_outline,
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          controller: _cityController,
+          label: 'City',
+          icon: Icons.location_city,
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          controller: _streetController,
+          label: 'Street',
+          icon: Icons.add_road,
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          controller: _numberController,
+          label: 'Number',
+          icon: Icons.format_list_numbered,
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          controller: _zipcodeController,
+          label: 'Zipcode',
+          icon: Icons.map,
+        ),
+        const SizedBox(height: 16),
+        CustomTextField(
+          controller: _phoneController,
+          label: 'Phone',
+          icon: Icons.phone,
+        ),
+        const SizedBox(height: 20),
       ],
     );
   }
+
   /// Builds the register button with loading state.
   Widget _buildRegisterButton() {
     return BlocBuilder<RegistrationCubit, RegistrationState>(
@@ -214,7 +244,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
   }
 
-
   /// Builds the "Already have an account?" login link.
   Widget _buildLoginLink() {
     return Row(
@@ -230,12 +259,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           },
           child: const Text(
             'Login',
-            style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.w700,fontSize: 23),
+            style: TextStyle(
+              color: Colors.deepOrange,
+              fontWeight: FontWeight.w700,
+              fontSize: 23,
+            ),
           ),
         ),
       ],
     );
   }
-
-
 }

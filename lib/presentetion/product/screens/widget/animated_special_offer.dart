@@ -1,11 +1,11 @@
-
-
 import 'package:flutter/material.dart';
 
 import 'animated_Icon_widget.dart';
 import 'animated_button_Widget.dart';
 
 class AnimatedSpecialOffer extends StatefulWidget {
+  const AnimatedSpecialOffer({super.key});
+
   @override
   _AnimatedSpecialOfferState createState() => _AnimatedSpecialOfferState();
 }
@@ -24,12 +24,10 @@ class _AnimatedSpecialOfferState extends State<AnimatedSpecialOffer>
       duration: const Duration(seconds: 5),
     )..repeat(reverse: true);
 
-    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.1).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
+    _scaleAnimation = Tween<double>(
+      begin: 1.0,
+      end: 1.1,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -43,10 +41,7 @@ class _AnimatedSpecialOfferState extends State<AnimatedSpecialOffer>
     return AnimatedBuilder(
       animation: _scaleAnimation,
       builder: (context, child) {
-        return Transform.scale(
-          scale: _scaleAnimation.value,
-          child: child,
-        );
+        return Transform.scale(scale: _scaleAnimation.value, child: child);
       },
       child: Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
@@ -110,4 +105,3 @@ class _AnimatedSpecialOfferState extends State<AnimatedSpecialOffer>
     );
   }
 }
-

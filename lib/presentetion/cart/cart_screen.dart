@@ -5,10 +5,9 @@ import 'cart_cubit,dart.dart';
 import 'cart_entity.dart';
 import 'cart_state.dart';
 
-
-
-
 class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     // Fetch cart details when the screen loads
@@ -51,10 +50,7 @@ class CartScreen extends StatelessWidget {
                     SizedBox(height: 16),
                     Text(
                       'Your cart is empty',
-                      style: TextStyle(
-                        fontSize: 18,
-                        color: Colors.grey[600],
-                      ),
+                      style: TextStyle(fontSize: 18, color: Colors.grey[600]),
                     ),
                   ],
                 ),
@@ -84,7 +80,11 @@ class CartScreen extends StatelessWidget {
   }
 
   // Build a modern product card with image, title, price, and quantity controls
-  Widget _buildProductCard(CartProductWithDetails cartProduct, BuildContext context, int cartId) {
+  Widget _buildProductCard(
+    CartProductWithDetails cartProduct,
+    BuildContext context,
+    int cartId,
+  ) {
     return Dismissible(
       key: Key(cartProduct.product.id.toString()),
       direction: DismissDirection.endToStart,
@@ -92,11 +92,7 @@ class CartScreen extends StatelessWidget {
         alignment: Alignment.centerRight,
         padding: EdgeInsets.only(right: 20),
         color: Colors.red,
-        child: Icon(
-          Icons.delete,
-          color: Colors.white,
-          size: 30,
-        ),
+        child: Icon(Icons.delete, color: Colors.white, size: 30),
       ),
       onDismissed: (direction) {
         // Remove item from cart
@@ -111,9 +107,7 @@ class CartScreen extends StatelessWidget {
       child: Card(
         elevation: 2,
         margin: EdgeInsets.only(bottom: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         child: Padding(
           padding: EdgeInsets.all(16),
           child: Row(
@@ -146,10 +140,7 @@ class CartScreen extends StatelessWidget {
                     SizedBox(height: 4),
                     Text(
                       '\$${cartProduct.product.price.toStringAsFixed(2)}',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.green,
-                      ),
+                      style: TextStyle(fontSize: 14, color: Colors.green),
                     ),
                     SizedBox(height: 8),
                     Row(
@@ -159,7 +150,6 @@ class CartScreen extends StatelessWidget {
                           onPressed: () {
                             // Decrease quantity
                             context.read<CartCubit>().updateCartItem(
-
                               CartProduct(
                                 productId: cartProduct.product.id,
                                 quantity: cartProduct.quantity - 1,
@@ -219,10 +209,7 @@ class CartScreen extends StatelessWidget {
             children: [
               Text(
                 'Total:',
-                style: TextStyle(
-                  fontSize: 18,
-                  color: Colors.grey[700],
-                ),
+                style: TextStyle(fontSize: 18, color: Colors.grey[700]),
               ),
               Spacer(),
               Text(

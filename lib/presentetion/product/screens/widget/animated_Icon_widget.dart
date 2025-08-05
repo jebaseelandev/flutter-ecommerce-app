@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AnimatedIconWidget extends StatefulWidget {
+  const AnimatedIconWidget({super.key});
+
   @override
   _AnimatedIconWidgetState createState() => _AnimatedIconWidgetState();
 }
@@ -19,12 +21,10 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
       duration: const Duration(milliseconds: 800),
     )..repeat(reverse: true);
 
-    _bounceAnimation = Tween<double>(begin: 0.0, end: 10.0).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
+    _bounceAnimation = Tween<double>(
+      begin: 0.0,
+      end: 10.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -40,11 +40,7 @@ class _AnimatedIconWidgetState extends State<AnimatedIconWidget>
       builder: (context, child) {
         return Transform.translate(
           offset: Offset(0, _bounceAnimation.value),
-          child: const Icon(
-            Icons.local_offer,
-            size: 40,
-            color: Colors.white,
-          ),
+          child: const Icon(Icons.local_offer, size: 40, color: Colors.white),
         );
       },
     );

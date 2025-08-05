@@ -5,6 +5,8 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../core/sheradprefernc.dart';
 
 class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
+
   @override
   _OnboardingScreenState createState() => _OnboardingScreenState();
 }
@@ -17,21 +19,22 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     OnboardingItem(
       lottieAsset: 'assets/lottie/welcome.json',
       title: 'Welcome to Our Store',
-      description: 'Explore a wide range of products and enjoy a seamless shopping experience.',
+      description:
+          'Explore a wide range of products and enjoy a seamless shopping experience.',
     ),
     OnboardingItem(
       lottieAsset: 'assets/lottie/shopping_cart.json',
       title: 'Easy Shopping',
-      description: 'Add products to your cart and checkout with just a few taps.',
+      description:
+          'Add products to your cart and checkout with just a few taps.',
     ),
     OnboardingItem(
       lottieAsset: 'assets/lottie/delivery.json',
       title: 'Fast Delivery',
-      description: 'Get your orders delivered quickly and securely to your doorstep.',
+      description:
+          'Get your orders delivered quickly and securely to your doorstep.',
     ),
   ];
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -59,9 +62,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               });
             },
             itemBuilder: (context, index) {
-              return OnboardingPage(
-                item: _onboardingItems[index],
-              );
+              return OnboardingPage(item: _onboardingItems[index]);
             },
           ),
 
@@ -75,10 +76,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
               child: const Text(
                 'Skip',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
+                style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ),
           ),
@@ -102,7 +100,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             right: 20,
             child: AnimatedContainer(
               duration: Duration(milliseconds: 300),
-              width: _currentPage == _onboardingItems.length - 1 ? double.infinity : 150,
+              width: _currentPage == _onboardingItems.length - 1
+                  ? double.infinity
+                  : 150,
               child: ElevatedButton(
                 onPressed: () async {
                   if (_currentPage == _onboardingItems.length - 1) {
@@ -126,7 +126,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
                 child: Text(
-                  _currentPage == _onboardingItems.length - 1 ? 'Get Started' : 'Next',
+                  _currentPage == _onboardingItems.length - 1
+                      ? 'Get Started'
+                      : 'Next',
                   style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
@@ -141,7 +143,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 class OnboardingPage extends StatelessWidget {
   final OnboardingItem item;
 
-  const OnboardingPage({required this.item});
+  const OnboardingPage({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
@@ -180,10 +182,7 @@ class OnboardingPage extends StatelessWidget {
           // Description
           Text(
             item.description,
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white70,
-            ),
+            style: TextStyle(fontSize: 16, color: Colors.white70),
             textAlign: TextAlign.center,
           ),
         ],

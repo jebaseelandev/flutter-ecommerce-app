@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class AnimatedButtonWidget extends StatefulWidget {
+  const AnimatedButtonWidget({super.key});
+
   @override
   _AnimatedButtonWidgetState createState() => _AnimatedButtonWidgetState();
 }
@@ -19,12 +21,10 @@ class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
       duration: const Duration(milliseconds: 200),
     );
 
-    _scaleAnimation = Tween<double>(begin: 1.0, end: 0.9).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
+    _scaleAnimation = Tween<double>(
+      begin: 1.0,
+      end: 0.9,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
   }
 
   @override
@@ -51,7 +51,7 @@ class _AnimatedButtonWidgetState extends State<AnimatedButtonWidget>
               borderRadius: BorderRadius.circular(20),
             ),
           ),
-          onPressed: () {  },
+          onPressed: () {},
           child: Text(
             'View All',
             style: TextStyle(

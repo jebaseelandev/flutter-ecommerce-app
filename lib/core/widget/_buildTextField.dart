@@ -1,6 +1,3 @@
-
-
-
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
@@ -10,12 +7,12 @@ class CustomTextField extends StatelessWidget {
   final bool isPassword;
 
   const CustomTextField({
-    Key? key,
+    super.key,
     required this.controller,
     required this.label,
     required this.icon,
     this.isPassword = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

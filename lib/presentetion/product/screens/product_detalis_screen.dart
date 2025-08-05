@@ -9,10 +9,7 @@ import '../../../data/modal/product/product.dart';
 class ProductDetailsScreen extends StatelessWidget {
   final ProductModel product;
 
-  const ProductDetailsScreen({
-    super.key,
-    required this.product,
-  });
+  const ProductDetailsScreen({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -90,27 +87,22 @@ class ProductDetailsScreen extends StatelessWidget {
               Row(
                 children: [
                   RatingBar.builder(
-                    initialRating: product.rating?.rate ?? 0,
+                    initialRating: product.rating.rate ?? 0,
                     minRating: 1,
                     direction: Axis.horizontal,
                     allowHalfRating: true,
                     itemCount: 5,
                     itemSize: 20,
-                    itemBuilder: (context, _) => const Icon(
-                      Icons.star,
-                      color: Colors.amber,
-                    ),
+                    itemBuilder: (context, _) =>
+                        const Icon(Icons.star, color: Colors.amber),
                     onRatingUpdate: (rating) {
                       // Handle rating update (e.g., submit to backend)
                     },
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    '(${product.rating?.count ?? 0} reviews)',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.grey[600],
-                    ),
+                    '(${product.rating.count ?? 0} reviews)',
+                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                   ),
                 ],
               ),
@@ -127,9 +119,9 @@ class ProductDetailsScreen extends StatelessWidget {
               const SizedBox(height: 8),
               Text(
                 product.description,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Colors.grey[700],
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(color: Colors.grey[700]),
               ),
             ],
           ),

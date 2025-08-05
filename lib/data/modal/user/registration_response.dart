@@ -1,5 +1,3 @@
-
-
 import 'package:json_annotation/json_annotation.dart';
 import 'package:weather_app/data/modal/user/user.dart';
 
@@ -8,24 +6,31 @@ import 'geolocation.dart';
 import 'name.dart';
 
 part 'registration_response.g.dart';
-@JsonSerializable()
 
-class RegistrationResponse extends User{
+@JsonSerializable()
+class RegistrationResponse extends User {
   @JsonKey(defaultValue: 0)
   final int id;
 
-  RegistrationResponse(this.id, {required super.email,
-    required super.username, required super.password,
-    required super.name, required super.address,
-    required super.phone});
+  RegistrationResponse(
+    this.id, {
+    required super.email,
+    required super.username,
+    required super.password,
+    required super.name,
+    required super.address,
+    required super.phone,
+  });
 
-
-  factory RegistrationResponse.fromJson(Map<String, dynamic> json) => _$RegistrationResponseFromJson(json);
+  factory RegistrationResponse.fromJson(Map<String, dynamic> json) =>
+      _$RegistrationResponseFromJson(json);
+  @override
   Map<String, dynamic> toJson() => _$RegistrationResponseToJson(this);
 
-
   factory RegistrationResponse.withDefaults() {
-    return RegistrationResponse(0, email: 'No email',
+    return RegistrationResponse(
+      0,
+      email: 'No email',
       username: 'No username',
       password: 'No password',
       name: const Name(firstname: 'No firstname', lastname: 'No lastname'),
@@ -39,6 +44,4 @@ class RegistrationResponse extends User{
       phone: 'No phone',
     );
   }
-
-
 }
