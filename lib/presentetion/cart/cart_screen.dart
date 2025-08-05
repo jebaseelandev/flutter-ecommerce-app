@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../data/modal/cart/cart_product.dart';
-import 'cart_cubit,dart.dart';
+import 'cart_cubit.dart';
 import 'cart_entity.dart';
 import 'cart_state.dart';
 
